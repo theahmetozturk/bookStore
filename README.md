@@ -26,7 +26,7 @@ To design and implement a RESTful API for an online bookstore using Java and Spr
     * Order:
         * `POST /orders`: Place a new order for a user with a minimum price of 25$.
         * `GET /orders/{userId}`: Get all orders for a specific user ordered by update date DESC.
-        * `GET /orders/details/{orderId}`: Get details of a specific order by its ID with the books under that order.
+        * `GET /orders/{orderId}`: Get details of a specific order by its ID with the books under that order.
 * Features:
     * Use Spring Boot's layered architecture: Controller, Service, DAO, Entity.
     * Implement security: Passwords should be securely hashed, and only authenticated users should be able to place orders. Admin operations (e.g., adding or deleting a book) should require admin privileges.
@@ -91,7 +91,7 @@ Authorization: Bearer <token>
 
 * **Get details of a specific order by its ID:**
 ```
-GET http://localhost:8080/orders/details/1
+GET http://localhost:8080/orders/1
 Authorization: Bearer <token>
 ```
 
