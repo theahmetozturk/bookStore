@@ -68,21 +68,6 @@ GET http://localhost:8080/books
 GET http://localhost:8080/books/1234567890
 ```
 
-* **Place a new order:**
-```
-POST http://localhost:8080/orders
-Authorization: Bearer <token>
-Body: {
-  "userId": 1,
-  "books": [
-    {
-      "isbn": "1234567890",
-      "quantity": 1
-    }
-  ]
-}
-```
-
 * **Get all orders for a specific user:**
 ```
 GET http://localhost:8080/orders/1
