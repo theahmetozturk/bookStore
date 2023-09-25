@@ -24,13 +24,13 @@ public class SecurityConfig {
     @Bean
     //authentication
     public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
-        UserDetails admin = User.withUsername("Basant")
-                .password(passwordEncoder.encode("Pwd1"))
-                .roles("USER")
+        UserDetails admin = User.withUsername("admin")
+                .password(passwordEncoder.encode("admin"))
+                .roles("ADMIN")
                 .build();
-        UserDetails user = User.withUsername("John")
-                .password(passwordEncoder.encode("Pwd2"))
-                .roles("USER", "ADMIN")
+        UserDetails user = User.withUsername("user")
+                .password(passwordEncoder.encode("user"))
+                .roles("USER")
                 .build();
         return new InMemoryUserDetailsManager(admin, user);
         /*return new UserInfoUserDetailsService();*/
