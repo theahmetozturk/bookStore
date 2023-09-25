@@ -16,8 +16,8 @@ import java.util.List;
 @Builder
 public class OrderCreateRequest {
     private User user;
-    private BigDecimal totalPrice;
     private List<Book> books;
     private String isbn;
     private Integer requestQuantity;
+    private BigDecimal totalPrice;
 }

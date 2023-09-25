@@ -28,8 +28,6 @@ public class Order extends BaseEntity {
     @JoinColumn(name = "user_id")
     private User user;
 
-    private BigDecimal totalPrice;
-
     @OneToMany(
             mappedBy = "order",
             fetch = FetchType.LAZY,
@@ -38,4 +36,12 @@ public class Order extends BaseEntity {
             }
     )
     private List<Book> books;
+
+    private BigDecimal totalPrice;
+    private BigDecimal getTotalPrice(Order totalPrice) {
+        return books.stream()
+                .map(Book::getPrice)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+    }
+
 }
