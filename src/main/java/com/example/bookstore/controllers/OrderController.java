@@ -43,6 +43,7 @@ public class OrderController {
         }
     }
 
+    @PostMapping()
     public ResponseEntity<?> createOrder (@RequestBody OrderCreateRequest request) throws InsufficientStockException,MinumumOrderAmountException{
         try {
             final Order order = orderService.createOrder(request);
